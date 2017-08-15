@@ -6,3 +6,5 @@
 <p><%= cl_image_tag @space.photo %></p>
 
 <%= link_to "Back to all lists", spaces_path %>
+<%= link_to "Update", edit_space_path %>
+<%= link_to "Delete", space_path(@space), method: :delete %>
