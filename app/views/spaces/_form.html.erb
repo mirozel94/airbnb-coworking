@@ -1,0 +1,10 @@
+<%= simple_form_for(@space) do |f| %>
+  <%= f.input :name, placeholder: "Remix Coworking" %>
+  <%= f.input :address, placeholder: "24 Cour des Petites Ecuries Paris 10e" %>
+  <%= f.input :description, placeholder: "Ce très grand espace est un mix de design chaleureux, actuel et industriel" %>
+  <%= f.input :capacity, placeholder: "80 personnes" %>
+  <%= f.input :price, placeholder: "420 €/mois" %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, class: "btn btn-primary"  %>
+<% end %>
