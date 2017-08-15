@@ -1,0 +1,8 @@
+<h1><%= @space.name  %></h1>
+<p><%= @space.address %></p>
+<p><%= @space.description %></p>
+<p><%= @space.capacity %></p>
+<p><%= @space.price %></p>
+<p><%= cl_image_tag @space.photo %></p>
+
+<%= link_to "Back to all lists", spaces_path %>

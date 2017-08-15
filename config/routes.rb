@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
   resources :spaces do
-    resources :bookings
+  resources :bookings
   end
   resources :users do
     resources :bookings
