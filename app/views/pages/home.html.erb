@@ -11,10 +11,10 @@
       <form>
         <div class="form-row">
           <div class="col-xs-3">
-            <input type="text" class="form-control" placeholder="Where?">
+            <input type="text" class="form-control" placeholder="Where?" id="address-search">
           </div>
           <div class="col-xs-3">
-            <input type="text" name="daterange" value="01/01/2015 - 01/31/2015"/>
+            <input type="text" name="daterange" class="form-control" value="<%= Date.today.strftime('%d/%m/%Y') +"-"+ Date.today.strftime('%d/%m/%Y') %>"/>
           </div>
           <div class="col-xs-3">
             <select class="form-control">
@@ -89,4 +89,22 @@
         $('input[name="daterange"]').daterangepicker();
     });
   </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyD_QRGa5exveYj-Pv0oLAJGcnrWLf-FPC0"></script>
+  <script>
+
+    var flat_address = $('#address-search').get(0);
+
+    if (flat_address) {
+      var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+      google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+        if (e.keyCode == 13) {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    }
+
+  </script>
+
+
 <% end %>
