@@ -7,8 +7,8 @@
     <div class="row">
       <% @spaces.each do |space| %>
         <div class="col-xs-12 col-sm-4">
-          <% photo = space.photo || 'http://placehold.it/350x150' %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo, height: 300, width: 400, crop: :fill %>')">
+          <% photo = space.photo || 'http://res.cloudinary.com/kaizen-conseil/image/upload/v1502875571/nbtpnhc6uewlnuaiodzl.jpg' %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo, height: 300, width: 400, crop: :fill %>')";">
                 <div class="card text-center"> <%= space.name %>
                 </div>
                   <div class="card-description">
