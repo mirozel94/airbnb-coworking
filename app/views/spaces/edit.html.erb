@@ -4,7 +4,7 @@
       <h1><%= @space.name %></h1>
       <%= simple_form_for [@space] do |f| %>
         <%= f.input :name %>
-        <%= f.input :address %>
+        <%= f.input :address, input_html: { id: 'address-update' } %>
         <%= f.input :description %>
         <%= f.input :capacity %>
         <%= f.input :price %>
@@ -16,3 +16,22 @@
     </div>
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyD_QRGa5exveYj-Pv0oLAJGcnrWLf-FPC0"></script>
+  <script>
+
+    var flat_address = $('#address-update').get(0);
+
+    if (flat_address) {
+      var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+      google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+        if (e.keyCode == 13) {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    }
+  </script>
+<% end %>
