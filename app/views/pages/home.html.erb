@@ -10,20 +10,32 @@
     <div class="col-xs-12">
       <form>
         <div class="form-row">
-          <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="City">
+          <div class="col-xs-3">
+            <input type="text" class="form-control" placeholder="Where?" id="address-search">
           </div>
-          <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="State">
+          <div class="col-xs-3">
+            <input type="text" name="daterange" class="form-control" value="<%= Date.today.strftime('%d/%m/%Y') +"-"+ Date.today.strftime('%d/%m/%Y') %>"/>
           </div>
-          <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="Zip">
+          <div class="col-xs-3">
+            <select class="form-control">
+              <option selected>How many cows?</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </div>
+          <div class="col-xs-3">
+            <button type="submit" class="btn btn-primary btn-block">Book now</button>
           </div>
         </div>
       </form>
     </div>
   </div>
-
 </div>
 
 <div class="container">
@@ -69,6 +81,30 @@
   </div>
 </div>
 
-<!-- -->
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+  <script>
+    $(function() {
+        $('input[name="daterange"]').daterangepicker();
+    });
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyD_QRGa5exveYj-Pv0oLAJGcnrWLf-FPC0"></script>
+  <script>
+
+    var flat_address = $('#address-search').get(0);
+
+    if (flat_address) {
+      var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+      google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+        if (e.keyCode == 13) {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    }
+
+  </script>
 
 
+<% end %>
