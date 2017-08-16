@@ -1,10 +1,14 @@
-<h1><%= @space.name  %></h1>
-<p><%= @space.address %></p>
-<p><%= @space.description %></p>
-<p><%= @space.capacity %></p>
-<p><%= @space.price %></p>
-<p><%= cl_image_tag @space.photo %></p>
+<div class="padding-spaces">
+  <div class ='container' class ="banner">
+    <h1><%= @space.name  %></h1>
+    <p>Adresse : <%= @space.address %></p>
+    <p><%= @space.description %></p>
+    <p>Nombre de postes : <%= @space.capacity %></p>
+    <p>Tarif : <%= @space.price %> €/mois</p>
+    <p><%= cl_image_tag @space.photo, height: 300, width: 400 %></p>
 
-<%= link_to "Back to all lists", spaces_path %>
-<%= link_to "Update", edit_space_path %>
-<%= link_to "Delete", space_path(@space), method: :delete %>
+    <%= link_to "Back to all lists", spaces_path %>
+    <%= link_to "Update", edit_space_path %>
+    <%= link_to "Delete", space_path(@space), method: :delete %>
+  </div>
+</div>
