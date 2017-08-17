@@ -9,37 +9,40 @@
 </div>
 
 <div class="container">
-
   <div class="row">
 
     <div class="col-lg-6 text-center" >
-
       <div class='title-space'>
         <p><%= @space.name %></p>
       </div>
-
       <div>
         <p><%= @space.description %></p>
       </div>
-
       <div>
         <p> <i class="fa fa-map-marker" aria-hidden="true"></i></p>
         <p> <%= @space.address %></p>
       </div>
-
       <div>
         <p> <i class="fa fa-users" aria-hidden="true"></i></p>
         <p> <%= @space.capacity %> postes</p>
         <p> <i class="fa fa-eur" aria-hidden="true"></i></p>
         <p> <%= @space.price %> €/mois</p></p>
       </div>
-
       <div style= "margin-top:50px">
         <%= link_to "Back to all lists", spaces_path, class: "btn btn-primary" %>
         <%= link_to "Update", edit_space_path, class: "btn btn-primary" %>
         <%= link_to "Delete", space_path(@space), class: "btn btn-primary", method: :delete %>
       </div>
-
+    
+    <%= simple_form_for [@space, @booking] do |f| %>
+      <% if params[:daterange].present? %>
+        <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
+      <% else %>
+        <% raise %>
+        <%= f.input :date, as: :string %>
+      <% end %>
+      <%= f.button :submit, class: "btn btn-info"  %>
+    <% end %>
     </div>
 
     <div class="col-lg-6">
@@ -65,4 +68,10 @@
       });
     });
   <% end %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+  <script>
+    $(function() {
+        $('input#booking_date').daterangepicker();
+    });
+  </script>
 <% end %>

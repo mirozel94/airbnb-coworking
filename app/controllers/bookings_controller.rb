@@ -1,17 +1,23 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+    @bookings = Booking.all
   end
 
   def create
-    @booking = Booking.new
-    @booking = Booking.find(params[:booking_id])
-
-
+    @space = Space.find(params[:space_id])
+    @booking = Booking.new(booking_params)
+    @booking.space = @space
+    @booking.user = current_user
+    @booking.status = "pending"
+    if @booking.save
+      redirect_to space_bookings_path
+    else
+      render 'spaces/show'
+    end
   end
 
-  def review_params
-    params.require(:booking).permit(:content)
+  def booking_params
+    params.require(:booking).permit(:date, :status)
   end
 
 end

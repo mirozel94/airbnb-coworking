@@ -16,7 +16,11 @@
                       <h2> <%= space.price %> €/mois</h2>
                       <h2> <%= space.capacity %> postes</h2>
                     </div>
-                  <%= link_to '', space_path(space), class: "card-link" %>
+                  <% if params[:daterange].present? %>
+                    <%= link_to '', space_path(space, daterange: params[:daterange]), class: "card-link" %>
+                  <% else %>
+                    <%= link_to '', space_path(space), class: "card-link" %>
+                  <% end %>
               </div>
           </div>
         <% end %>
