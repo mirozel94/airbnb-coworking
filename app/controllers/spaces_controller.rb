@@ -9,6 +9,7 @@ class SpacesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @space = Space.find(params[:id])
     @hash = Gmaps4rails.build_markers(@space) do |space, marker|
       marker.lat space.latitude
