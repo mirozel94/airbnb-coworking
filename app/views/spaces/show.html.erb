@@ -33,6 +33,7 @@
         <%= link_to "Update", edit_space_path, class: "btn btn-primary" %>
         <%= link_to "Delete", space_path(@space), class: "btn btn-primary", method: :delete %>
       </div>
+
     
     <%= simple_form_for [@space, @booking] do |f| %>
       <% if params[:daterange].present? %>
@@ -48,10 +49,10 @@
     <div class="col-lg-6">
       <div id="map"></div>
     </div>
+
   </div>
-  
 </div>
-  
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
