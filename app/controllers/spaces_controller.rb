@@ -10,6 +10,7 @@ class SpacesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @user = current_user
     @space = Space.find(params[:id])
     @hash = Gmaps4rails.build_markers(@space) do |space, marker|
       marker.lat space.latitude
@@ -25,7 +26,7 @@ class SpacesController < ApplicationController
     @space = Space.new(space_params)
     @space.user = current_user
     if @space.save
-      redirect_to space_path(@space)
+      redirect_to space_path(@space), notice: "your space have been created"
     else
       render :new
     end
