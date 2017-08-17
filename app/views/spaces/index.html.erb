@@ -1,10 +1,10 @@
 <div class="content">
-  <div class="spaces_index_width">
+  <div class="padding-spaces">
     <h1 class="text-center">Space list</h1>
       <div class="text-center mystyle">
         <%= link_to "Create a space", new_space_path, class: "btn btn-light" %>
       </div>
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="row">
         <% @spaces.each do |space| %>
           <div class="col-xs-12 col-sm-4">
@@ -25,14 +25,17 @@
           </div>
         <% end %>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
+
 
   <div class="map-container">
-    <div id="map"></div>
-  </div>
 
+    <div id="map"></div>
+
+  </div>
 </div>
+
     <!-- Gmaps js: building the map -->
 
 <% content_for(:after_js) do %>
