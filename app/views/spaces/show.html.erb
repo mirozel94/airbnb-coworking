@@ -34,12 +34,10 @@
         <%= link_to "Delete", space_path(@space), class: "btn btn-primary", method: :delete %>
       </div>
 
-    
     <%= simple_form_for [@space, @booking] do |f| %>
       <% if params[:daterange].present? %>
         <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
       <% else %>
-        <% raise %>
         <%= f.input :date, as: :string %>
       <% end %>
       <%= f.button :submit, class: "btn btn-info"  %>
