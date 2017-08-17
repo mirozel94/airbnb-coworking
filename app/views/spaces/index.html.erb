@@ -4,7 +4,7 @@
       <div class="text-center mystyle">
         <%= link_to "Create a space", new_space_path, class: "btn btn-light" %>
       </div>
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="row">
         <% @spaces.each do |space| %>
           <div class="col-xs-12 col-sm-4">
@@ -16,19 +16,26 @@
                       <h2> <%= space.price %> €/mois</h2>
                       <h2> <%= space.capacity %> postes</h2>
                     </div>
-                  <%= link_to '', space_path(space), class: "card-link" %>
+                  <% if params[:daterange].present? %>
+                    <%= link_to '', space_path(space, daterange: params[:daterange]), class: "card-link" %>
+                  <% else %>
+                    <%= link_to '', space_path(space), class: "card-link" %>
+                  <% end %>
               </div>
           </div>
         <% end %>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
+
 
   <div class="map-container">
-    <div id="map"></div>
-  </div>
 
+    <div id="map"></div>
+
+  </div>
 </div>
+
     <!-- Gmaps js: building the map -->
 
 <% content_for(:after_js) do %>
