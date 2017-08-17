@@ -1,0 +1,43 @@
+
+.form-wrapper {
+  //background-color: #2E3136;
+  padding: 70px;
+  min-height: 100vh;
+  .form-login {
+    background-color: #22252A;
+    border-radius: 4px;
+    input, textarea, select {
+      background: #454955;
+      color: white;
+      border: none;
+    }
+    input[placeholder], [placeholder], *[placeholder] {
+        color: #737780 !important;
+    }
+    .btn {
+      width: 100%;
+      background-color: blue;
+      border-radius: 20px;
+    }
+    label {
+      color: white;
+      opacity: 0.6;
+      font-weight: bolder;
+      letter-spacing: -1px;
+    }
+    h2 {
+      text-align: center;
+      background: #454955;
+      color: white;
+      margin: 0px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    form {
+      padding: 20px;
+    }
+  }
+
+
+}
+
