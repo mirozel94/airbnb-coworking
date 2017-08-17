@@ -13,11 +13,15 @@
     <%= link_to "Update", edit_space_path %>
     <%= link_to "Delete", space_path(@space), method: :delete %>
 
-<%= simple_form_for [@space, @booking] do |f| %>
-  <%= f.input :date, placeholder: "80 (nombre de postes)" %>
-  <%= f.button :submit, class: "btn btn-light"  %>
-<% end %>
-
+    <%= simple_form_for [@space, @booking] do |f| %>
+      <% if params[:daterange].present? %>
+        <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
+      <% else %>
+        <% raise %>
+        <%= f.input :date, as: :string %>
+      <% end %>
+      <%= f.button :submit, class: "btn btn-info"  %>
+    <% end %>
 
   </div>
 </div>
@@ -44,4 +48,10 @@
       });
     });
   <% end %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+  <script>
+    $(function() {
+        $('input#booking_date').daterangepicker();
+    });
+  </script>
 <% end %>
