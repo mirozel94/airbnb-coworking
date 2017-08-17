@@ -1,18 +1,18 @@
-<h1 class="text-center">My bookings</h1>
-
-<div class="container">
-  <div class="row">
-    <% @bookings.each do |b| %>
-      <div class="col-xs-4 col-sm-12">
-        <div class="card text-center">
-          <div class="card-header" style="background-image: url('http://placehold.it/350x150')">
-            <div class="card-body">
-            <%= link_to b.name, space_path(b) %>
+<div class="wrapper">
+  <h1 class="text-center">My bookings</h1>
+  <div class="container">
+    <div class="row">
+      <% @bookings.each do |b| %>
+        <div class="col-xs-4 col-sm-12">
+          <div class="card text-center">
+            <div class="card-header" style="background-image: url('http://placehold.it/350x150')">
+              <div class="card-body">
+              <%= link_to b.name, space_path(b) %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
