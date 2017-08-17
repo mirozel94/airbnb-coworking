@@ -1,14 +1,73 @@
-<div class="padding-spaces">
-  <div class ='container' class ="banner">
-    <h1><%= @space.name  %></h1>
-    <p>Adresse : <%= @space.address %></p>
-    <p><%= @space.description %></p>
-    <p>Nombre de postes : <%= @space.capacity %></p>
-    <p>Tarif : <%= @space.price %> €/mois</p>
-    <p><%= cl_image_tag @space.photo, height: 300, width: 400 %></p>
-
-    <%= link_to "Back to all lists", spaces_path %>
-    <%= link_to "Update", edit_space_path %>
-    <%= link_to "Delete", space_path(@space), method: :delete %>
+<div class="banner-spaces" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%), url(<%= cl_image_path @space.photo %>);">
+  <div class="row">
+    <div class="col-xs-12 col-buffer">
+      <div class="banner">
+        <h1><%= @space.name %></h1>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-6 text-center" >
+
+      <div class='title-space'>
+        <p><%= @space.name %></p>
+      </div>
+
+      <div>
+        <p><%= @space.description %></p>
+      </div>
+
+      <div>
+        <p> <i class="fa fa-map-marker" aria-hidden="true"></i></p>
+        <p> <%= @space.address %></p>
+      </div>
+
+      <div>
+        <p> <i class="fa fa-users" aria-hidden="true"></i></p>
+        <p> <%= @space.capacity %> postes</p>
+        <p> <i class="fa fa-eur" aria-hidden="true"></i></p>
+        <p> <%= @space.price %> €/mois</p></p>
+      </div>
+
+      <div style= "margin-top:50px">
+        <%= link_to "Back to all lists", spaces_path, class: "btn btn-primary" %>
+        <%= link_to "Update", edit_space_path, class: "btn btn-primary" %>
+        <%= link_to "Delete", space_path(@space), class: "btn btn-primary", method: :delete %>
+      </div>
+
+    </div>
+
+    <div class="col-lg-6">
+      <div id="map"></div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+    <!-- Gmaps js: building the map -->
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
