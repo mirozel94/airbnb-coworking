@@ -12,6 +12,13 @@
     <%= link_to "Back to all lists", spaces_path %>
     <%= link_to "Update", edit_space_path %>
     <%= link_to "Delete", space_path(@space), method: :delete %>
+
+<%= simple_form_for [@space, @booking] do |f| %>
+  <%= f.input :date, placeholder: "80 (nombre de postes)" %>
+  <%= f.button :submit, class: "btn btn-light"  %>
+<% end %>
+
+
   </div>
 </div>
 
