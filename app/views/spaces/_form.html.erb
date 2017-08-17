@@ -1,3 +1,5 @@
+<div class="form-style">
+
 <%= simple_form_for(@space) do |f| %>
   <%= f.input :name, placeholder: "Remix Coworking" %>
   <%= f.input :address, placeholder: "24 Cour des Petites Ecuries Paris 10e", input_html: { id: 'special' } %>
@@ -8,6 +10,7 @@
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit, class: "btn btn-light"  %>
 <% end %>
+</div>
 
 
 <% content_for(:after_js) do %>
