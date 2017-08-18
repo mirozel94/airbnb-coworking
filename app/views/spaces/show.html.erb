@@ -28,20 +28,18 @@
         <p> <i class="fa fa-eur" aria-hidden="true"></i></p>
         <p> <%= @space.price %> €/mois</p></p>
       </div>
+      <div id="booking-form" class="center-block">
+    <%= simple_form_for [@space, @booking] do |f| %>
+        <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
+        <%= f.input :people, as: :string, input_html: { value: params[:people] } %>
+        <%= f.button :submit, "Book now", class: "btn btn-danger"  %>
+    <% end %>
+      </div>
       <div style= "margin-top:50px">
         <%= link_to "Back to all lists", spaces_path, class: "btn btn-primary" %>
         <%= link_to "Update", edit_space_path, class: "btn btn-primary" %>
         <%= link_to "Delete", space_path(@space), class: "btn btn-primary", method: :delete %>
       </div>
-
-    <%= simple_form_for [@space, @booking] do |f| %>
-      <% if params[:daterange].present? %>
-        <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
-      <% else %>
-        <%= f.input :date, as: :string %>
-      <% end %>
-      <%= f.button :submit, class: "btn btn-info"  %>
-    <% end %>
     </div>
 
     <div class="col-lg-6">
@@ -50,6 +48,7 @@
 
   </div>
 </div>
+      <%= link_to '', user_bookings_path(current_user, daterange: params[:daterange], location: params[:location], people: params[:people]), class: "card-link" %>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
