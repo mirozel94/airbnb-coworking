@@ -9,40 +9,12 @@
               <div class="card-body">
               <%= link_to b.id, space_path(b) %>
               <%= b.user.email %>
+              <%= params[:daterange] %>
               </div>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-
-    <div class="row">
-      <div class="message">
-        <img class="avatar-square" src="">
-        <div class="message-name">
-          <h3>Gab Dehan</h3>
-          <p>10/07/17</p>
-        </div>
-        <div class="message-body">
-          <p><strong>I am not sure yet!</strong></p>
-          <p>
-            I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-          </p>
-        </div>
-        <div class="message-status">
-          <p class="status pending">Pending</p>
-          <p class="price">€345</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-      </div>
-    </div>
-
-
   </div>
 </div>
-
