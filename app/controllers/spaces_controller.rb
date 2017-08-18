@@ -28,7 +28,7 @@ class SpacesController < ApplicationController
     if @space.save
       redirect_to space_path(@space), notice: "your space have been created"
     else
-      render :new
+      render :new, notice: "something went wrong"
     end
   end
 
