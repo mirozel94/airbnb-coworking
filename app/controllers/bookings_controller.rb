@@ -9,6 +9,8 @@ class BookingsController < ApplicationController
     @booking.space = @space
     @booking.user = current_user
     @booking.status = "pending"
+    # @booking.price = Booking.compute_price(params[:daterange], params[:people].to_i, @space.price).round(0)
+    # @booking.date = params[:daterange]
     if @booking.save
       redirect_to space_bookings_path, notice: "new pasture created, meuh"
     else
@@ -23,7 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :status)
+    params.require(:booking).permit(:date, :status, :price, :daterange)
   end
 
 end
