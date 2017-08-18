@@ -8,7 +8,7 @@
           <img class="avatar-square" src="http://res.cloudinary.com/kaizen-conseil/image/upload/v1503048994/Wework_ur4gvx.jpg">
           <div class="message-name">
             <h3>My booking</h3>
-            <p><%= b.date %></p>
+            <p><%= b.date.strftime("%d %m %Y") %></p>
           </div>
           <div class="message-body">
             <p><strong><%= b.space.name %></strong></p>
