@@ -31,6 +31,7 @@
       <div id="booking-form" class="center-block">
       <% params[:final_price] = Booking.compute_price(params[:daterange], params[:people].to_i, @space.price).round(0) %>
       <p><strong> Your Total = <%= params[:final_price] %> € </strong></p>
+
     <%= simple_form_for [@space, @booking] do |f| %>
         <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
         <%= f.input :people, as: :string, input_html: { value: params[:people] } %>
