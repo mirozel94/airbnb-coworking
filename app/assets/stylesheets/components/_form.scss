@@ -4,11 +4,12 @@
   padding: 70px;
   min-height: 100vh;
   .form-login {
-    background-color: #22252A;
+    background-color: white;
+    opacity: 0.8;
     border-radius: 4px;
     input, textarea, select {
-      background: #454955;
-      color: white;
+      background: white;
+      color: #808080;
       border: none;
     }
     input[placeholder], [placeholder], *[placeholder] {
@@ -16,11 +17,12 @@
     }
     .btn {
       width: 100%;
-      background-color: blue;
-      border-radius: 20px;
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
     }
     label {
-      color: white;
+      color: #337ab7;
       opacity: 0.6;
       font-weight: bolder;
       letter-spacing: -1px;
@@ -37,7 +39,5 @@
       padding: 20px;
     }
   }
-
-
 }
 
