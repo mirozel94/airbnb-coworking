@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     if @booking.save
-      redirect_to space_bookings_path
+      redirect_to space_bookings_path, notice: "created"
     else
       render 'spaces/show'
     end
