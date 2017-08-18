@@ -30,7 +30,7 @@ space_1 = Space.create!({
   address: "33 Rue la Fayette, 75009 Paris",
   description: "We Work est un réseau mondial d'espaces de travail où les entreprises grandissent ensemble.",
   capacity: 200,
-  price: 450,
+  price: 500,
   user: user_1
 })
 
@@ -38,8 +38,8 @@ space_2 = Space.create!({
   name: "NextDoor",
   address: "16-18, rue de Londres 75009 Paris",
   description: "Profitez d'une communauté bienveillante, qui crée du lien et du business.",
-  capacity: 200,
-  price: 450,
+  capacity: 150,
+  price: 400,
   user: user_1
 })
 
@@ -47,25 +47,25 @@ space_3 = Space.create!({
   name: "Remix Coworking",
   address: "24 rue des petites ecuries, 75010 Paris",
   description: "Le Remix est une communauté ouverte et bienveillante composée de 50% d’entrepreneurs et 50% de créatifs.",
-  capacity: 200,
-  price: 450,
+  capacity: 300,
+  price: 150,
   user: user_1
 })
 
 space_4 = Space.create!({
   name: "Lawomatic Coworking",
   address: "20 Rue Jean et Marie Moinon, 75010 Paris",
-  description: "The best space.",
-  capacity: 200,
-  price: 450,
+  description: "Coworking à Paris 10ème, Entre Belleville et le Canal St Martin. Dans un cadre top le premier Coworking de Paris !",
+  capacity: 120,
+  price: 100,
   user: user_1
 })
 
 space_5 = Space.create!({
   name: "Le Tank",
   address: "22bis Rue des Taillandiers, 75011 Paris",
-  description: "The best space.",
-  capacity: 200,
+  description: "Le Tank est un espace de coworking qui favorise la création, nourrit l'inspiration et encourage l'ambition des esprits créatifs du numérique à Paris.",
+  capacity: 340,
   price: 450,
   user: user_1
 })
@@ -73,7 +73,7 @@ space_5 = Space.create!({
 space_6 = Space.create!({
   name: "Le Laptop",
   address: "36 Rue Arthur Rozier, 75019 Paris",
-  description: "The best space.",
+  description: "Laptop est un espace de coworking pour venir travailler de manière flexible ou permanente dans un cadre calme et inspirant dans le 19e à Jourdain.",
   capacity: 200,
   price: 450,
   user: user_1
@@ -82,27 +82,27 @@ space_6 = Space.create!({
 space_7 = Space.create!({
   name: "La Mutinerie",
   address: "29 Rue de Meaux, 75019 Paris",
-  description: "The best space.",
-  capacity: 200,
-  price: 450,
+  description: "Espace de coworking et de coliving rural, accueillant indépendants et groupes en quête de vert, au creux des vallées percheronnes.",
+  capacity: 90,
+  price: 80,
   user: user_1
 })
 
 space_8 = Space.create!({
   name: "Work In Paris",
   address: "20 Rue Jean-Baptiste Pigalle, 75009 Paris",
-  description: "The best space.",
-  capacity: 200,
-  price: 450,
+  description: "Work In Paris est un réseau d'espace de coworking dédiés aux indépendant et aux petites entreprises.",
+  capacity: 230,
+  price: 95,
   user: user_1
 })
 
 space_9 = Space.create!({
   name: "Hubsy café & coworking",
   address: "41 Rue Réaumur, 75003 Paris",
-  description: "The best space.",
-  capacity: 200,
-  price: 450,
+  description: "Hubsy Café & Coworking, votre bureau au café en plein coeur de Paris.",
+  capacity: 110,
+  price: 145,
   user: user_1
 })
 
