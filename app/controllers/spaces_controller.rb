@@ -1,7 +1,6 @@
 class SpacesController < ApplicationController
 
   def index
-    binding.pry
     @spaces = Space.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@spaces) do |space, marker|
       marker.lat space.latitude
