@@ -28,7 +28,7 @@ url = "http://www.cowork-in.fr/wp-content/uploads/2015/05/coworking1.jpg"
 space_1 = Space.create!({
   name: "We Work",
   address: "33 Rue la Fayette, 75009 Paris",
-  description: "The best space.",
+  description: "We Work est un réseau mondial d'espaces de travail où les entreprises grandissent ensemble.",
   capacity: 200,
   price: 450,
   user: user_1
@@ -37,7 +37,7 @@ space_1 = Space.create!({
 space_2 = Space.create!({
   name: "NextDoor",
   address: "16-18, rue de Londres 75009 Paris",
-  description: "The best space.",
+  description: "Profitez d'une communauté bienveillante, qui crée du lien et du business.",
   capacity: 200,
   price: 450,
   user: user_1
@@ -46,7 +46,7 @@ space_2 = Space.create!({
 space_3 = Space.create!({
   name: "Remix Coworking",
   address: "24 rue des petites ecuries, 75010 Paris",
-  description: "The best space.",
+  description: "Le Remix est une communauté ouverte et bienveillante composée de 50% d’entrepreneurs et 50% de créatifs.",
   capacity: 200,
   price: 450,
   user: user_1
@@ -115,17 +115,17 @@ space_2.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/uploa
 space_2.save
 space_3.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503048994/Remix_zayhpc.jpg"
 space_3.save
-space_4.remote_photo_url = url
+space_4.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503063172/lawomatic_rmhvrs.jpg"
 space_4.save
-space_5.remote_photo_url = url
+space_5.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503062896/Le_Tank_txaauc.jpg"
 space_5.save
-space_6.remote_photo_url = url
+space_6.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503062893/laptop_zpqag3.jpg"
 space_6.save
-space_7.remote_photo_url = url
+space_7.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503062914/mutinerie_q5qoal.jpg"
 space_7.save
-space_8.remote_photo_url = url
+space_8.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503062924/Workinparis_fhr4sv.jpg"
 space_8.save
-space_9.remote_photo_url = url
+space_9.remote_photo_url = "http://res.cloudinary.com/kaizen-conseil/image/upload/v1503062907/hubsy_ehfzgb.jpg"
 space_9.save
 
 puts'booking creating'
