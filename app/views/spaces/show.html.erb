@@ -26,9 +26,10 @@
         <p> <i class="fa fa-users" aria-hidden="true"></i></p>
         <p> <%= @space.capacity %> postes</p>
         <p> <i class="fa fa-eur" aria-hidden="true"></i></p>
-        <p> <%= @space.price %> €/mois</p></p>
+        <p> <%= @space.price %> €/mois</p>
       </div>
       <div id="booking-form" class="center-block">
+      <p><strong> Your Total = <%= Booking.compute_price(params[:daterange], params[:people].to_i, @space.price).round(0) %> € </strong></p>
     <%= simple_form_for [@space, @booking] do |f| %>
         <%= f.input :date, as: :string, input_html: { value: params[:daterange] } %>
         <%= f.input :people, as: :string, input_html: { value: params[:people] } %>
@@ -37,6 +38,7 @@
       </div>
       <div style= "margin-top:50px">
         <%= link_to "Back to all lists", spaces_path, class: "btn btn-primary" %>
+      <%= link_to '', user_bookings_path(current_user, daterange: params[:daterange], location: params[:location], people: params[:people])%>
         <%= link_to "Update", edit_space_path, class: "btn btn-primary" %>
         <%= link_to "Delete", space_path(@space), class: "btn btn-primary", method: :delete %>
       </div>
@@ -48,7 +50,6 @@
 
   </div>
 </div>
-      <%= link_to '', user_bookings_path(current_user, daterange: params[:daterange], location: params[:location], people: params[:people]), class: "card-link" %>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
