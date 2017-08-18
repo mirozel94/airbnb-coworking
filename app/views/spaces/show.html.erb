@@ -48,7 +48,7 @@
 
   </div>
 </div>
-      <%= link_to '', user_bookings_path(current_user, daterange: params[:daterange], location: params[:location], people: params[:people]), class: "card-link" %>
+      <%= link_to '', user_bookings_path(current_user, daterange: params[:daterange], location: params[:location], people: params[:people])%>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>

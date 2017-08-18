@@ -41,41 +41,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
 
-      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,-0.0) 100%), url(<%= image_path 'Wework.jpg'%>);">
-        <div class="card-body">
-          <h4 class="card-title">We Work</h4>
-          <p class="card-text">WeWork est un réseau mondial d'espaces de travail où les entreprises grandissent ensemble.</p>
-          <a href="#" class="btn btn-primary">Plus d'info...</a>
+    <% @spaces.each do |space| %>
+      <div class="col-xs-4">
+        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,-0.0) 100%), url('<%= space.photo_url %>');">
+          <div class="card-body">
+            <h4 class="card-title"><%= space.name %></h4>
+            <p class="card-text"><%= space.description %></p>
+            <!-- <a href="#" class="btn btn-primary">Plus d'info...</a> -->
+            <%= link_to "Plus d'info...", space_path(space), class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
-
-    </div>
-    <div class="col-xs-4">
-
-      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,-0.0) 100%), url(<%= image_path 'NextDoor.jpg'%>);">
-
-        <div class="card-body">
-          <h4 class="card-title">Next Door</h4>
-          <p class="card-text">Profitez d'une communauté bienveillante, qui crée du lien et du business.</p>
-          <a href="#" class="btn btn-primary">Plus d'info...</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-xs-4">
-
-      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,-0.0) 100%), url(<%= image_path 'Remix.jpg'%>);">
-
-        <div class="card-body">
-          <h4 class="card-title">Remix Coworking</h4>
-          <p class="card-text">Le Remix est une communauté ouverte et bienveillante composée de 50% d’entrepreneurs et 50% de créatifs.</p>
-          <a href="#" class="btn btn-primary">Plus d'info...</a>
-        </div>
-      </div>
-
-    </div>
+    <% end %>
   </div>
 </div>
 
