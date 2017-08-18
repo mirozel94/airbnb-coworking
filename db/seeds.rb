@@ -130,7 +130,7 @@ space_9.save
 
 puts'booking creating'
 
-Booking.create(date: Date.today, user: User.last, space: Space.last)
+# Booking.create(date: Date.today, user: User.last, space: Space.last)
 
 puts 'Finished!'
 
