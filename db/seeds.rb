@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'delete spaces'
 Space.destroy_all
+puts 'delete booking'
+Booking.destroy_all
 puts 'delete users'
 User.destroy_all
 
@@ -105,11 +107,11 @@ space_9 = Space.create!({
 puts'spaces created'
 
 puts 'add photos'
-space_1.remote_photo_url = url
+space_1.remote_photo_url = "https://www.google.fr/imgres?imgurl=https%3A%2F%2Fthe-happiness-index.com%2Fwp-content%2Fuploads%2F2016%2F04%2FHappiness-Index-wework-moorgate-london-1-1.jpg&imgrefurl=https%3A%2F%2Fthe-happiness-index.com%2Four-fantastic-new-offices-in-the-heart-of-london%2F&docid=HMtfcLsY7CMVgM&tbnid=sHZ9KZ0VY3kyMM%3A&vet=10ahUKEwi7ztPZouDVAhWODBoKHU_YCQIQMwgtKAgwCA..i&w=1000&h=500&bih=732&biw=957&q=we%20work&ved=0ahUKEwi7ztPZouDVAhWODBoKHU_YCQIQMwgtKAgwCA&iact=mrc&uact=8"
 space_1.save
-space_2.remote_photo_url = url
+space_2.remote_photo_url = "https://www.google.fr/imgres?imgurl=https%3A%2F%2Fres.cloudinary.com%2Fjll-global-olm%2Fimage%2Fupload%2Ft_jllOlmCarouselLightbox%2Ft_main%2Fq_60%2Fv1477690502%2Ffr%2Flocation-bureaux-issy-les-moulineaux-92130-41-43-rue-camille-desmoulins-8712074.jpg&imgrefurl=https%3A%2F%2Fimmobilier.jll.fr%2Flocation-bureaux%2Fbureaux-a-louer-issy-les-moulineaux-92130-468668&docid=O4t3DChf_rKbaM&tbnid=b9pm2C61yCzumM%3A&vet=10ahUKEwigmYyCo-DVAhUCWBoKHVlsBc8QMwgsKAcwBw..i&w=901&h=600&bih=732&biw=957&q=nextdoor%20issy%20les%20moulineaux&ved=0ahUKEwigmYyCo-DVAhUCWBoKHVlsBc8QMwgsKAcwBw&iact=mrc&uact=8"
 space_2.save
-space_3.remote_photo_url = url
+space_3.remote_photo_url = "https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiepcqlo-DVAhWCaxQKHVt3D2UQjRwIBw&url=https%3A%2F%2Fwww.remixcoworking.com%2F&psig=AFQjCNFhoYMpXqaCpocKRarr7-vJhNYHGw&ust=1503128219294846"
 space_3.save
 space_4.remote_photo_url = url
 space_4.save
