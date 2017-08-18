@@ -1,47 +1,68 @@
 <div class="wrapper">
   <h1 class="text-center">My bookings</h1>
   <div class="container">
+
     <div class="row">
       <% @bookings.each do |b| %>
-        <div class="col-xs-4 col-sm-12">
-          <div class="card text-center">
-            <div class="card-header" style="background-image: url('http://placehold.it/350x150')">
-              <div class="card-body">
-              <%= link_to b.id, space_path(b) %>
-              <%= b.user.email %>
-              </div>
-            </div>
+        <div class="message">
+          <img class="avatar-square" src="http://res.cloudinary.com/kaizen-conseil/image/upload/v1503048994/Wework_ur4gvx.jpg">
+          <div class="message-name">
+            <h3>My booking</h3>
+            <p><%= b.date %></p>
+          </div>
+          <div class="message-body">
+            <p><strong><%= b.space.name %></strong></p>
+            <p>
+              <%= b.space.description %>
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status pending">pending </p>
+            <p class="price"><%= b.space.price %> €</p>
           </div>
         </div>
       <% end %>
     </div>
 
-    <div class="row">
-      <div class="message">
-        <img class="avatar-square" src="">
-        <div class="message-name">
-          <h3>Gab Dehan</h3>
-          <p>10/07/17</p>
+     <div class="row">
+        <div class="message">
+          <img class="avatar-square" src="http://res.cloudinary.com/kaizen-conseil/image/upload/v1503048994/Wework_ur4gvx.jpg">
+          <div class="message-name">
+            <h3>My booking</h3>
+            <p>2017-07-01 2017-07-31</p>
+          </div>
+          <div class="message-body">
+            <p><strong>We Work</strong></p>
+            <p>
+              The best place.
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status accepted">accepted </p>
+            <p class="price"> 450 €</p>
+          </div>
         </div>
-        <div class="message-body">
-          <p><strong>I am not sure yet!</strong></p>
-          <p>
-            I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-          </p>
-        </div>
-        <div class="message-status">
-          <p class="status pending">Pending</p>
-          <p class="price">€345</p>
-        </div>
-      </div>
     </div>
 
     <div class="row">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-      </div>
+        <div class="message">
+          <img class="avatar-square" src="http://res.cloudinary.com/kaizen-conseil/image/upload/v1503048994/Wework_ur4gvx.jpg">
+          <div class="message-name">
+            <h3>My booking</h3>
+            <p>2017-05-01 2017-06-30</p>
+          </div>
+          <div class="message-body">
+            <p><strong>Remix Coworking</strong></p>
+            <p>
+              The best place.
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status declined">declined </p>
+            <p class="price"> 900 €</p>
+          </div>
+        </div>
     </div>
-
 
   </div>
 </div>
