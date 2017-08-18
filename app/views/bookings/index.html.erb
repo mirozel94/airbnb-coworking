@@ -20,6 +20,13 @@
             <p class="status pending">pending </p>
             <p class="price"><%= b.space.price %> €</p>
           </div>
+          <div class="delation">
+            <p>
+              <%= link_to space_booking_path(b.space, b), method: "delete" do %>
+              <i class="fa fa-trash-o fa-lg"></i>
+              <% end %>
+            </p>
+          </div>
         </div>
       <% end %>
     </div>

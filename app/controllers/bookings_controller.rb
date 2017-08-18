@@ -10,10 +10,16 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     if @booking.save
-      redirect_to space_bookings_path, notice: "created"
+      redirect_to space_bookings_path, notice: "new pasture created, meuh"
     else
       render 'spaces/show'
     end
+  end
+
+  def destroy
+    @destroy_booking = Booking.find(params[:id])
+    @destroy_booking.destroy
+    redirect_to space_bookings_path, notice: "pasture deleted, meeeuh"
   end
 
   def booking_params
