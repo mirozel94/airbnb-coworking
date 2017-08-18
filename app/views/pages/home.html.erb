@@ -11,13 +11,13 @@
       <form action="<%= spaces_path %>" method="get">
         <div class="form-row">
           <div class="col-xs-3">
-            <input type="text" class="form-control" placeholder="Where?" id="address-search">
+            <input type="text" name="location" class="form-control" placeholder="Where?" id="address-search">
           </div>
           <div class="col-xs-3">
             <input type="text" name="daterange" class="form-control" value="<%= Date.today.strftime('%d/%m/%Y') +"-"+ Date.today.strftime('%d/%m/%Y') %>"/>
           </div>
           <div class="col-xs-3">
-            <select class="form-control">
+            <select class="form-control" name="people">
               <option selected>How many cows?</option>
               <option value="1">1</option>
               <option value="2">2</option>
